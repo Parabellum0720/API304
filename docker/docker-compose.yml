@@ -1,0 +1,22 @@
+version: '3'
+services:
+  nginx:
+    image: nginx
+    ports:
+      - 9090:80
+    restart: always
+  nginx1:
+    image: nginx
+    ports:
+      - 9091:80
+    restart: always
+  nginx2:
+    image: nginx
+    ports:
+      - 9092:80
+    restart: always
+  nginx3:
+    image: nginx
+    ports:
+      - 9093:80
+    restart: always
