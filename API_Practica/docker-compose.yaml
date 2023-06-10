@@ -1,0 +1,22 @@
+version: '3'
+services:
+  database:
+    image: mongo:4.2.9
+    ports:
+      - 27018:27017
+    container_name: database
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: 2007
+    volumes:
+      - ./volumes/db:/data/db
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./src:/app/src
+  
+volumes:
+  mongo_data:
